@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorSearchBar">#F7F5F7</color>
+    <color name="colorAccent">#E4E6E8</color>
+    <color name="cleanWhite">#FCFCFC</color>
+    <color name="cleanBlack">#000000</color>
+    <color name="cleanGreen">#319C5E</color>
+    <color name="cleanRed">#9B4049</color>
+    <color name="errorRed">#F44336</color>
+    <color name="trendingSearch">@color/colorSearchBar</color>
+    <color name="chartAxis">@color/cleanBlack</color>
+    <color name="sectionTabColor">#FEFCFE</color>
+    <color name="detArticleDesc">#797879</color>
+    <color name="dialogBorder">#B395D2</color>
+    <color name="trendingColor">#605B9F</color>
+    <color name="searchIcons">#6A696A</color>
+    <color name="bottomIcons">#4F4E4F</color>
+    <color name="trendingHint">#AAAAAA</color>
+    <color name="splash">#F1F1F3</color>
+</resources>

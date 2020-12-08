@@ -1,0 +1,42 @@
+<resources>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="actionBarSize">60dp</item>
+        <item name="actionBarStyle">@style/MyActionBar</item>
+        <item name="android:homeAsUpIndicator">@drawable/ic_arrow_back_grey_24dp</item>
+        <item name="autoCompleteTextViewStyle">@style/myAutoCompleteTextViewStyle</item>
+
+        <item name="background">@color/colorSearchBar</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorSearchBar</item>
+        <item name="colorAccent">@color/dialogBorder</item>
+    </style>
+
+    <style name="EditTextTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorControlNormal">@color/trendingHint</item>
+        <item name="colorControlActivated">@color/trendingColor</item>
+        <item name="colorControlHighlight">@color/trendingColor</item>
+    </style>
+
+    <style name="myTitleStyle" parent="@style/Base.TextAppearance.AppCompat.Title">
+        <item name="android:textSize">25dp</item>
+        <item name="android:layout_marginStart">0dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="myAutoCompleteTextViewStyle" parent="Widget.AppCompat.Light.AutoCompleteTextView">
+        <item name="android:popupBackground">@color/colorSearchBar</item>
+    </style>
+
+    <style name="MyActionBar" parent="@style/Widget.AppCompat.ActionBar.Solid">
+        <item name="titleTextStyle">@style/MyTitleTextStyle</item>
+        <item name="background">@color/colorSearchBar</item>
+    </style>
+    <style name="MyTitleTextStyle" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/cleanBlack</item>
+    </style>
+    
+    <style name="AppTheme.Launcher">
+        <item name="android:windowBackground">@drawable/launcher</item>
+    </style>
+
+</resources>

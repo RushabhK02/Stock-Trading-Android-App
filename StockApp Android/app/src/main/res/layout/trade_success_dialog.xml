@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="400dp"
+    android:layout_marginTop="20dp"
+    android:layout_marginBottom="20dp"
+    android:paddingBottom="50dp"
+    android:id="@+id/dialog_root"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="@color/cleanGreen">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Congratulations!"
+        android:layout_marginTop="50dp"
+        android:textColor="@color/cleanWhite"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:gravity="center"/>
+    <TextView
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:textStyle="italic"
+        android:id="@+id/success_msg"
+        android:textAlignment="center"
+        android:textSize="15dp"
+        android:textColor="@color/cleanWhite"
+        android:text="You have successfully sold 5 shares of MSFT"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="50dp"
+        android:id="@+id/done_btn"
+        android:text="Done"
+        android:textColor="@color/cleanGreen"
+        android:background="@drawable/round_btn_grey"/>
+</LinearLayout>

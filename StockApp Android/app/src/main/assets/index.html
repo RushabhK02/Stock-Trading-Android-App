@@ -1,0 +1,126 @@
+
+<html lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta name="author" content="Script Tutorials" />
+    <title>How to create active charts using Highcharts | Script Tutorials</title>
+
+    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <!-- <script src="http://code.highcharts.com/highcharts.js"></script> -->
+    <script type="text/javascript" src="https://code.highcharts.com/stock/highstock.js"></script>
+    <script type="text/javascript" src="https://code.highcharts.com/stock/modules/data.js"></script>
+    <script type="text/javascript" src="https://code.highcharts.com/stock/modules/drag-panes.js"></script>
+    <script type="text/javascript" src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+    <script type="text/javascript" src="https://code.highcharts.com/stock/indicators/indicators.js"></script>
+    <script type="text/javascript" src="https://code.highcharts.com/stock/indicators/volume-by-price.js"></script>
+
+</head>
+<body>
+    <div id="chart_1" class="chart"></div>
+    <script type='text/javascript'>
+
+function loadGraph(ticker) {
+      // https://demo-live-data.highcharts.com/aapl-ohlcv.json
+      // Highcharts.getJSON(`http://10.0.2.2:8081/apis/stocks/history?ticker=${ticker}`,
+      Highcharts.getJSON(`https://cryptic-waters-26273.herokuapp.com/apis/stocks/history?ticker=${ticker}`,
+      function (data) {
+              var groupingUnits = [[
+                  'week',                         // unit name
+                  [1]                             // allowed multiples
+              ], [
+                  'month',
+                  [1, 2, 3, 4, 6]
+              ]],
+
+              i = 0;
+
+          // create the chart
+          Highcharts.stockChart('chart_1', {
+              chart: {
+                height: 300
+              },
+
+              rangeSelector: {
+                  selected: 2
+              },
+
+              yAxis: [{
+                  startOnTick: false,
+                  endOnTick: false,
+                  labels: {
+                      align: 'right',
+                      x: -3
+                  },
+                  title: {
+                      text: 'OHLC'
+                  },
+                  height: '60%',
+                  lineWidth: 2,
+                  resize: {
+                      enabled: true
+                  }
+              }, {
+                  labels: {
+                      align: 'right',
+                      x: -3
+                  },
+                  title: {
+                      text: 'Volume'
+                  },
+                  top: '65%',
+                  height: '35%',
+                  offset: 0,
+                  lineWidth: 2
+              }],
+
+              tooltip: {
+                  split: true
+              },
+
+              plotOptions: {
+                  series: {
+                      dataGrouping: {
+                          units: groupingUnits
+                      }
+                  }
+              },
+
+              series: [{
+                  type: 'candlestick',
+                  name: `${ticker}`,
+                  id: `${ticker}`,
+                  zIndex: 2,
+                  data: data.ohlc
+              }, {
+                  type: 'column',
+                  name: 'Volume',
+                  id: 'volume',
+                  data: data.volume,
+                  yAxis: 1
+              }, {
+                  type: 'vbp',
+                  linkedTo: `${ticker}`,
+                  params: {
+                      volumeSeriesID: 'volume'
+                  },
+                  dataLabels: {
+                      enabled: false
+                  },
+                  zoneLines: {
+                      enabled: false
+                  }
+              }, {
+                  type: 'sma',
+                  linkedTo: `${ticker}`,
+                  zIndex: 1,
+                  marker: {
+                      enabled: false
+                  }
+              }]
+          });
+      });
+    }
+
+</script>
+</body>
+</html>
